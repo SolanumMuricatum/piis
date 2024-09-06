@@ -23,4 +23,4 @@ for (let i = 0; i < 2; i++) {
   personalMovieDB.movies[lastMovie] = movieRating; 
 }
 
-document.body.innerHTML = `<pre>${JSON.stringify(personalMovieDB, null, 2)}</pre>`;
+console.log(personalMovieDB)
