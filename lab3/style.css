@@ -1,0 +1,19 @@
+.buttonStyle{
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.imageStyle{
+    width: 200px;
+    height: 220px;
+}
+
+.cellStyle{
+    border: 2px solid rgb(1, 1, 30);
+    padding: 20px;
+}
