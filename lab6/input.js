@@ -49,8 +49,7 @@ document.addEventListener('touchmove', (e) => {
     } else if (e.touches.length === 2){
         element.style.left = initialPosition.left;
         element.style.top = initialPosition.top;
-        //isFollowing = lastFollowing;
-        isFollowing = false;
+        isFollowing = lastFollowing;
         document.removeEventListener("touchmove", moveAt);
         document.removeEventListener('touchend', (e));
     }
