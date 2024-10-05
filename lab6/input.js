@@ -1,6 +1,7 @@
 let lastTap = 0; 
 const element = document.querySelector('.target'); 
 let isFollowing = false; 
+let lastFollowing = false;
 
 const initialPosition = {
     top: element.style.top,
@@ -13,17 +14,20 @@ function moveAt(e) {
 }
 
 function funClick(){
+    lastFollowing = isFollowing;
     isFollowing = false;
 }
 
-function detectDoubleTap() {
+function detectDoubleTap(e) {
     const curTime = new Date().getTime();
     const tapLen = curTime - lastTap;
 
     if (tapLen < 500 && tapLen > 0) {
+        lastFollowing = isFollowing;
         isFollowing = true; 
         console.log('Double tapped! Following mode activated.');
     } else {
+        lastFollowing = isFollowing;
         isFollowing = false; 
         console.log('Single tapped! Following mode deactivated.');
     }
@@ -47,18 +51,19 @@ document.addEventListener('touchmove', (e) => {
             moveAt(e); 
             document.addEventListener('click', funClick);
         }
-    } else {
+    } else if (e.touches.length === 2){
         document.removeEventListener("touchmove", moveAt);
+        isFollowing = lastFollowing;
         element.style.left = initialPosition.left;
         element.style.top = initialPosition.top;
     }
 });
 
-document.addEventListener('touchend', () => {
+document.addEventListener('touchend', (e) => {
     initialPosition.left = element.style.left;
     initialPosition.top = element.style.top;
     if (!isFollowing) {
-        detectDoubleTap();
+        detectDoubleTap(e);
         document.removeEventListener('click', funClick);
         document.removeEventListener('touchmove', moveAt);
     }
