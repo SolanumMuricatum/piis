@@ -2,6 +2,11 @@ let lastTap = 0;
 const element = document.querySelector('.target'); 
 let isFollowing = false; 
 
+const initialPosition = {
+    top: element.style.top,
+    left: element.style.left
+};
+
 function moveAt(e) {
     element.style.left = e.touches[0].pageX - element.offsetWidth / 2 + 'px';
     element.style.top = e.touches[0].pageY - element.offsetHeight / 2 + 'px';
@@ -30,7 +35,9 @@ element.addEventListener('touchstart', (e) => {
        
         document.addEventListener('touchmove', moveAt);
     } else if (e.touches.length === 2) {
-        // аналогия для кнопки esc
+        document.removeEventListener("touchmove", moveAt);
+        element.style.left = initialPosition.left;
+        element.style.top = initialPosition.top;
     }
 });
 
@@ -42,6 +49,8 @@ document.addEventListener('touchmove', (e) => {
 });
 
 document.addEventListener('touchend', () => {
+    initialPosition.left = element.style.left;
+    initialPosition.top = element.style.top;
     if (!isFollowing) {
         detectDoubleTap();
         document.removeEventListener('click', funClick);
