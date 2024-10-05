@@ -34,15 +34,10 @@ function detectDoubleTap(e) {
     lastTap = curTime;
 }
 
-element.addEventListener('touchstart', (e) => {
-   // if (e.touches.length === 1) {
-       
-        document.addEventListener('touchmove', moveAt);
-    // } else if (e.touches.length === 2) {
-    //     document.removeEventListener("touchmove", moveAt);
-    //     element.style.left = initialPosition.left;
-    //     element.style.top = initialPosition.top;
-    // }
+element.addEventListener('touchstart', () => {
+    
+    document.addEventListener('touchmove', moveAt);
+   
 });
 
 document.addEventListener('touchmove', (e) => {
@@ -55,8 +50,8 @@ document.addEventListener('touchmove', (e) => {
         document.removeEventListener("touchmove", moveAt);
         element.style.left = initialPosition.left;
         element.style.top = initialPosition.top;
-        document.removeEventListener('touchend', (e));
         isFollowing = lastFollowing;
+        document.removeEventListener('touchend', (e));
     }
 });
 
