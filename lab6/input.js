@@ -51,6 +51,7 @@ document.addEventListener('touchmove', (e) => {
         element.style.left = initialPosition.left;
         element.style.top = initialPosition.top;
         isFollowing = lastFollowing;
+        document.removeEventListener('touchend', (e));
     }
 });
 
