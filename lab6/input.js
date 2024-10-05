@@ -47,11 +47,14 @@ document.addEventListener('touchmove', (e) => {
             document.addEventListener('click', funClick);
         }
     } else if (e.touches.length === 2){
-        document.removeEventListener("touchmove", moveAt);
-        element.style.left = initialPosition.left;
-        element.style.top = initialPosition.top;
-        isFollowing = lastFollowing;
-        document.removeEventListener('touchend', (e));
+        document.addEventListener('touchend', (e)=>{
+            document.removeEventListener("touchmove", moveAt);
+            element.style.left = initialPosition.left;
+            element.style.top = initialPosition.top;
+            isFollowing = lastFollowing;
+            document.removeEventListener('touchend', (e));
+        })
+        
     }
 });
 
