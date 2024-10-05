@@ -31,20 +31,26 @@ function detectDoubleTap() {
 }
 
 element.addEventListener('touchstart', (e) => {
-    if (e.touches.length === 1) {
+   // if (e.touches.length === 1) {
        
         document.addEventListener('touchmove', moveAt);
-    } else if (e.touches.length === 2) {
-        document.removeEventListener("touchmove", moveAt);
-        element.style.left = initialPosition.left;
-        element.style.top = initialPosition.top;
-    }
+    // } else if (e.touches.length === 2) {
+    //     document.removeEventListener("touchmove", moveAt);
+    //     element.style.left = initialPosition.left;
+    //     element.style.top = initialPosition.top;
+    // }
 });
 
 document.addEventListener('touchmove', (e) => {
-    if (isFollowing) {
-        moveAt(e); 
-        document.addEventListener('click', funClick);
+    if (e.touches.length === 1) {
+        if (isFollowing) {
+            moveAt(e); 
+            document.addEventListener('click', funClick);
+        }
+    } else {
+        document.removeEventListener("touchmove", moveAt);
+        element.style.left = initialPosition.left;
+        element.style.top = initialPosition.top;
     }
 });
 
