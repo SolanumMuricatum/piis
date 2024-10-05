@@ -53,9 +53,10 @@ document.addEventListener('touchmove', (e) => {
         }
     } else if (e.touches.length === 2){
         document.removeEventListener("touchmove", moveAt);
-        isFollowing = lastFollowing;
         element.style.left = initialPosition.left;
         element.style.top = initialPosition.top;
+        document.removeEventListener('touchend', (e));
+        isFollowing = lastFollowing;
     }
 });
 
