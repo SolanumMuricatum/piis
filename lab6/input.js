@@ -24,7 +24,7 @@ function detectDoubleTap(e) {
     const tapLen = curTime - lastTap;
 
     if (tapLen < 500 && tapLen > 0) {
-        if(initSecondTouch){
+        if(!initSecondTouch){
             lastFollowing = isFollowing;
             isFollowing = true; 
             console.log('Double tapped! Following mode activated.');
