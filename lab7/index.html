@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" />
+  <title>lab7</title>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>Мини-графический редактор</legend>
+
+      <table>
+        <tr>
+          <td>Фигура</td>
+          <td>Цвет</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio"id="contactChoice1"name="figure"value="circle"/>
+            <label for="contactChoice1">Круг</label>
+          </td>
+          <td>
+            <input type="radio"id="contactChoice1"name="color"value="yellow"/>
+            <label for="contactChoice1">Жёлтый</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio"id="contactChoice1"name="figure"value="square"/>
+            <label for="contactChoice1">Квадрат</label>
+          </td>
+          <td>
+            <input type="radio"id="contactChoice1"name="color"value="red"/>
+            <label for="contactChoice1">Красный</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio"id="contactChoice1"name="figure"value="rectangle"/>
+            <label for="contactChoice1">Прямоугольник</label>
+          </td>
+          <td>
+            <input type="radio"id="contactChoice1"name="color"value="green"/>
+            <label for="contactChoice1">Зелёный</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio"id="contactChoice1"name="figure"value="star"/>
+            <label for="contactChoice1">Звезда</label>
+          </td>
+          <td>
+            <input type="radio"id="contactChoice1"name="color"value="blue"/>
+            <label for="contactChoice1">Синий</label>
+          </td>
+        </tr>
+      </table>
+      <div>
+        <button type="submit">Подтвердить</button>
+      </div>
+    </fieldset>
+  </form> 
+  <fieldset id="fieldsetForSVG">
+    <legend>Поле для рисования</legend>
+    <svg id="svgElement"></svg>
+  </fieldset> 
+  <script src="scripts.js"></script>
+</body>
+</html>
