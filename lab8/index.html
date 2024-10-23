@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" />
+  <title>lab7</title>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>Мини-графический редактор</legend>
+
+      <table>
+        <tr>
+          <td>Фигура</td>
+          <td>Цвет</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio" id = "circle" name="figure"value="circle"/>
+            <label for="circle">Круг</label>
+          </td>
+          <td>
+            <input type="radio" id = "yellow" name="color"value="yellow"/>
+            <label for="yellow">Жёлтый</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio" id = "rectangle" name="figure"value="rectangle"/>
+            <label for="rectangle">Прямоугольник</label>
+          </td>
+          <td>
+            <input type="radio" id = "red" name="color"value="red"/>
+            <label for="red">Красный</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+    
+          </td>
+          <td>
+            <input type="radio" id = "green" name="color"value="green"/>
+            <label for="green">Зелёный</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            
+          </td>
+          <td>
+            <input type="radio" id = "blue" name="color"value="blue"/>
+            <label for="blue">Синий</label>
+          </td>
+        </tr>
+      </table>
+      <div>
+        <button type="submit">Подтвердить</button>
+      </div>
+    </fieldset>
+  </form> 
+  <fieldset id="fieldsetForCanvas">
+    <legend>Поле для рисования</legend>
+    <canvas height = "400" width="1465" id="canvasElement"></canvas>
+  </fieldset> 
+  <script src="scripts.js"></script>
+</body>
+</html>
